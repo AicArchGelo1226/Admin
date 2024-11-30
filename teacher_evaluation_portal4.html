@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Evaluation Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f9;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+        #signup, #login, #evaluation, #summary {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(section) {
+            document.getElementById("signup").style.display = "none";
+            document.getElementById("login").style.display = "none";
+            document.getElementById("evaluation").style.display = "none";
+            document.getElementById("summary").style.display = "none";
+            document.getElementById(section).style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Teacher Evaluation Portal</h1>
+        <nav>
+            <button onclick="showSection('signup')">Sign Up</button>
+            <button onclick="showSection('login')">Log In</button>
+            <button onclick="showSection('evaluation')">Evaluation Form</button>
+            <button onclick="showSection('summary')">Summary of Results</button>
+        </nav>
+    </header>
+
+    <!-- Sign Up Section -->
+    <div class="container" id="signup">
+        <h2>Sign Up</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="signup-username" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Log In Section -->
+    <div class="container" id="login">
+        <h2>Log In</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+
+    <!-- Evaluation Form Section -->
+    <div class="container" id="evaluation">
+        <h2>Evaluation Form</h2>
+        <form action="#" method="POST">
+            <!-- General Information -->
+            <div class="form-group">
+                <label for="student-name">Your Name:</label>
+                <input type="text" id="student-name" name="student-name" required>
+            </div>
+            <div class="form-group">
+                <label for="teacher-name">Teacher's Name:</label>
+                <input type="text" id="teacher-name" name="teacher-name" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="evaluation-comments">Comments:</label>
+                <textarea id="evaluation-comments" name="evaluation-comments" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit Evaluation</button>
+        </form>
+    </div>
+
+    <!-- Summary of Results Section -->
+    <div class="container" id="summary">
+        <h2>Summary of Results</h2>
+        <p>Only teachers can view this section. This feature would display aggregated feedback and ratings.</p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Teacher Evaluation Portal</p>
+    </footer>
+</body>
+</html>
